@@ -1,27 +1,16 @@
 pipeline{
 agent any
 tools {
- maven 'maven'
-  jdk 'Java'
+ nodejs 'node'
 }
 environment {
 dockerhub=credentials('dockerhub')
 }
  stages{
-        stage('clean')
-        {
+  stage ('Install dependencies')
+  {
             steps{
-                sh 'mvn clean'
-            }
-        }
-
-        stage('pack')
-        {
-            when{
-                branch "prod"
-                }
-            steps{
-                sh 'mvn package -DskipTests'
+                sh 'npm install'
             }
         }
 stage('build image')
