@@ -1,16 +1,19 @@
 pipeline{
 agent any
 tools {
-
 }
 environment {
 dockerhub=credentials('dockerhub')
 }
 stage('build image')
+ {
 when{
 branch "prod"
+}
 steps{
 sh 'docker build -t Nodejs-app:1.01 .'
+}
+ }
 stage('pushing to dockerhub')
 {
 when{
