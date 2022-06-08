@@ -46,3 +46,4 @@ sh 'docker push alekhyavarma25/Nodejs-app:1.01 '
 }
 }
  }
+}
