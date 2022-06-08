@@ -1,7 +1,7 @@
 pipeline{
 agent any
 tools {
- nodejs 'node'
+ nodejs '18.3.0'
 }
 environment {
 dockerhub=credentials('dockerhub')
