@@ -1,5 +1,9 @@
 pipeline{
 agent any
+ docker {
+            image 'node:18.3.0' 
+            //args '-p 3000:3000' 
+        }
 tools {
  nodejs '18.3.0'
 }
@@ -13,7 +17,15 @@ tools {
   //              sh 'npm install'
   //          }
   //  }
-stage('build image')
+  stage ('build')
+  {
+   
+       steps{
+               sh 'npm install'
+        sh 'npm run build'
+           }
+  }
+stage('build imag')
  {
 when{
  
