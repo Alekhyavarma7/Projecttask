@@ -6,7 +6,7 @@ WORKDIR /home/node/app
 
 # build dependencies
 # COPY package.json /app 
-COPY ./app/package.json /app 
+COPY ./app/package.json /home/node/app
 USER node
 RUN npm install 
 COPY . ./app
