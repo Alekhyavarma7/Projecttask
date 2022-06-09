@@ -3,9 +3,9 @@ agent any
 tools {
  nodejs '18.3.0'
 }
-environment {
+# environment {
 # dockerhub=credentials('dockerhub')
-}
+# }
  stages{
   stage ('Install dependencies')
   {
