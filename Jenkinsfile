@@ -1,5 +1,5 @@
 pipeline{
-agent any
+ agent {
  docker {
             image 'node:18.3.0' 
             //args '-p 3000:3000' 
@@ -7,6 +7,7 @@ agent any
 tools {
  nodejs '18.3.0'
 }
+ }
 //environment {
 // dockerhub=credentials('dockerhub')
  //}
