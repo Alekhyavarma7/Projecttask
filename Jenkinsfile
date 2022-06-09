@@ -1,4 +1,4 @@
-pipeline{
+/*pipeline{
  agent any
  docker {
             image 'node:18.3.0' 
@@ -49,4 +49,23 @@ sh 'docker push alekhyavarma25/Nodejs-app:1.01 '
 }
 }
  }
+}*/
+node {
+     def app 
+     stage('clone repository') {
+      checkout scm  
+    }
+     stage('Build docker Image'){
+      app = docker.build("alekhyavarma25/appnodejstask")
+    }
+     stage('Test Image'){
+       app.inside {
+         sh 'echo "TEST PASSED"'
+      }  
+    }
+     stage('Push Image'){
+       docker.withRegistry('https://registry.hub.docker.com', 'git') {            
+       app.push("${env.BUILD_NUMBER}")            
+       app.push("latest")   
+   }
 }
