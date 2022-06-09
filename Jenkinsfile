@@ -11,6 +11,7 @@ tools {
 //environment {
 // dockerhub=credentials('dockerhub')
  //}
+ agent any
  stages{
  // stage ('Install dependencies')
   //{
