@@ -1,5 +1,5 @@
 pipeline{
- agent any {
+ agent any
  docker {
             image 'node:18.3.0' 
             //args '-p 3000:3000' 
@@ -49,5 +49,4 @@ sh 'docker push alekhyavarma25/Nodejs-app:1.01 '
 }
 }
  }
-}
 }
