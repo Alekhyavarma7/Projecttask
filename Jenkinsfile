@@ -4,7 +4,7 @@ tools {
  nodejs '18.3.0'
 }
 environment {
-dockerhub=credentials('dockerhub')
+# dockerhub=credentials('dockerhub')
 }
  stages{
   stage ('Install dependencies')
