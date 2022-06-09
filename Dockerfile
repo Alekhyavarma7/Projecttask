@@ -5,12 +5,13 @@ RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
 WORKDIR /home/node/app
 
 # build dependencies
-COPY ./package*.json ./
+COPY package.json /app 
 USER node
-RUN npm install
+RUN npm install 
+COPY . ./app
 
 # copy in source code
-COPY --chown=node:node ./ ./
+# COPY --chown=node:node ./ ./
 
 # start express server
-CMD [ "npm", "start" ]
+CMD ["npm", "run", "start"]
