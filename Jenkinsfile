@@ -7,7 +7,7 @@ pipeline{
 tools {
  nodejs '18.3.0'
 }
- }
+ 
 //environment {
 // dockerhub=credentials('dockerhub')
  //}
