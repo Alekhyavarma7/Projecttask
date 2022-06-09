@@ -5,7 +5,8 @@ RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
 WORKDIR /home/node/app
 
 # build dependencies
-COPY package.json /app 
+# COPY package.json /app 
+COPY ./app/package.json /app 
 USER node
 RUN npm install 
 COPY . ./app
