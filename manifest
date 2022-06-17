@@ -1,0 +1,24 @@
+build:
+  api:
+    context: api
+  frontend:
+    context: frontend
+deploy:
+ image=alekhyavarma25/appnodejstask:latest
+dev:
+  api:
+    command: ["bash"]
+    forward:
+      - 8080:8080
+      - 9229:9229
+     
+    sync:
+      - api:/usr/src/app
+  frontend:
+    command: yarn start
+    sync:
+      - frontend:/usr/src/app
+	  
+
+	  
+	  
